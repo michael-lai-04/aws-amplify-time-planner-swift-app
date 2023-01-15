@@ -1,0 +1,30 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-timeplanner-dev-224623-authRole",
+      "UnauthRoleArn": "arn:aws:iam::952042177151:role/amplify-timeplanner-dev-224623-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::952042177151:role/amplify-timeplanner-dev-224623-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-timeplanner-dev-224623-deployment",
+      "UnauthRoleName": "amplify-timeplanner-dev-224623-unauthRole",
+      "StackName": "amplify-timeplanner-dev-224623",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:952042177151:stack/amplify-timeplanner-dev-224623/38546930-941a-11ed-83fd-06a76af29829",
+      "AmplifyAppId": "dygdcibdkj6td",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-timeplanner-dev-224623-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "function": {
+        "usersFunc": {
+          "deploymentBucketName": "amplify-timeplanner-dev-224623-deployment",
+          "s3Key": "amplify-builds/usersFunc-753252314f70417a6f4b-build.zip"
+        }
+      },
+      "api": {
+        "api5ebc9189": {}
+      },
+      "auth": {
+        "timeplanner": {}
+      }
+    }
+  }
+}

@@ -11,14 +11,21 @@
 		15535AFF2972F69F00A0E422 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15535AFE2972F69F00A0E422 /* ContentView.swift */; };
 		15535B012972F6A300A0E422 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15535B002972F6A300A0E422 /* Assets.xcassets */; };
 		15535B042972F6A300A0E422 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15535B032972F6A300A0E422 /* Preview Assets.xcassets */; };
+		15535B0C2972F6EF00A0E422 /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 15535B0B2972F6EF00A0E422 /* AWSAPIPlugin */; };
+		15535B0E2972F6EF00A0E422 /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 15535B0D2972F6EF00A0E422 /* AWSCognitoAuthPlugin */; };
+		15535B102972F6EF00A0E422 /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 15535B0F2972F6EF00A0E422 /* Amplify */; };
+		A344950688FAEF109D74FA8F /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 79D742C1B144444EF9931E7D /* awsconfiguration.json */; };
+		B0F6B018BF6B60D4FA0F4FE1 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0251B55F8FC1BE4D6C3A726F /* amplifyconfiguration.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0251B55F8FC1BE4D6C3A726F /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		15535AF92972F69F00A0E422 /* aws-amplify-time-planner-swift-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aws-amplify-time-planner-swift-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15535AFC2972F69F00A0E422 /* aws_amplify_time_planner_swift_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aws_amplify_time_planner_swift_appApp.swift; sourceTree = "<group>"; };
 		15535AFE2972F69F00A0E422 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		15535B002972F6A300A0E422 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15535B032972F6A300A0E422 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		79D742C1B144444EF9931E7D /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +33,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15535B102972F6EF00A0E422 /* Amplify in Frameworks */,
+				15535B0C2972F6EF00A0E422 /* AWSAPIPlugin in Frameworks */,
+				15535B0E2972F6EF00A0E422 /* AWSCognitoAuthPlugin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F918D0241CEA20C1B28F844 /* AmplifyConfig */ = {
+			isa = PBXGroup;
+			children = (
+				79D742C1B144444EF9931E7D /* awsconfiguration.json */,
+				0251B55F8FC1BE4D6C3A726F /* amplifyconfiguration.json */,
+			);
+			name = AmplifyConfig;
+			sourceTree = "<group>";
+		};
 		15535AF02972F69F00A0E422 = {
 			isa = PBXGroup;
 			children = (
 				15535AFB2972F69F00A0E422 /* aws-amplify-time-planner-swift-app */,
 				15535AFA2972F69F00A0E422 /* Products */,
+				0F918D0241CEA20C1B28F844 /* AmplifyConfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +103,11 @@
 			dependencies = (
 			);
 			name = "aws-amplify-time-planner-swift-app";
+			packageProductDependencies = (
+				15535B0B2972F6EF00A0E422 /* AWSAPIPlugin */,
+				15535B0D2972F6EF00A0E422 /* AWSCognitoAuthPlugin */,
+				15535B0F2972F6EF00A0E422 /* Amplify */,
+			);
 			productName = "aws-amplify-time-planner-swift-app";
 			productReference = 15535AF92972F69F00A0E422 /* aws-amplify-time-planner-swift-app.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +136,9 @@
 				Base,
 			);
 			mainGroup = 15535AF02972F69F00A0E422;
+			packageReferences = (
+				15535B0A2972F6EF00A0E422 /* XCRemoteSwiftPackageReference "amplify-swift" */,
+			);
 			productRefGroup = 15535AFA2972F69F00A0E422 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +155,8 @@
 			files = (
 				15535B042972F6A300A0E422 /* Preview Assets.xcassets in Resources */,
 				15535B012972F6A300A0E422 /* Assets.xcassets in Resources */,
+				A344950688FAEF109D74FA8F /* awsconfiguration.json in Resources */,
+				B0F6B018BF6B60D4FA0F4FE1 /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +369,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		15535B0A2972F6EF00A0E422 /* XCRemoteSwiftPackageReference "amplify-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aws-amplify/amplify-swift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		15535B0B2972F6EF00A0E422 /* AWSAPIPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15535B0A2972F6EF00A0E422 /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = AWSAPIPlugin;
+		};
+		15535B0D2972F6EF00A0E422 /* AWSCognitoAuthPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15535B0A2972F6EF00A0E422 /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = AWSCognitoAuthPlugin;
+		};
+		15535B0F2972F6EF00A0E422 /* Amplify */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15535B0A2972F6EF00A0E422 /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = Amplify;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 15535AF12972F69F00A0E422 /* Project object */;
 }
