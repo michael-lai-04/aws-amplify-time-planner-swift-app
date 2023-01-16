@@ -16,14 +16,15 @@
       "function": {
         "usersFunc": {
           "deploymentBucketName": "amplify-timeplanner-dev-224623-deployment",
-          "s3Key": "amplify-builds/usersFunc-753252314f70417a6f4b-build.zip"
+          "s3Key": "amplify-builds/usersFunc-6230744834486c306e70-build.zip"
         }
       },
       "api": {
         "api5ebc9189": {}
       },
       "auth": {
-        "timeplanner": {}
+        "timeplanner": {},
+        "userPoolGroups": {}
       }
     }
   }

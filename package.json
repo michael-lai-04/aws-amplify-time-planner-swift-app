@@ -1,0 +1,11 @@
+{
+  "name": "aws-amplify-time-planner-swift-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/michael-lai-04/aws-amplify-time-planner-swift-app.git",
+  "author": "michael lai <michaelhin123@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "amplify:usersFunc": "cd amplify/backend/function/usersFunc/src && rm -r main && cd ../ts && yarn run tsc && cd -"
+  }
+}
