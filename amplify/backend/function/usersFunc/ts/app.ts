@@ -17,3 +17,17 @@ app.use(function (req, res, next) {
     next()
 });
 
+app.listen(3000, function() {
+    console.log("App started")
+});
+
+import {UsersController} from "./main/controller";
+export const usersFuncController = new UsersController();
+ 
+import {usersRoutes} from "./main/router";
+app.use(usersRoutes)
+
+// Export the app object. When executing the application local this does nothing. However,
+// to port it to AWS Lambda we will create a wrapper around that will load the app from
+// this file
+module.exports = app

@@ -16,7 +16,7 @@
       "function": {
         "usersFunc": {
           "deploymentBucketName": "amplify-timeplanner-dev-224623-deployment",
-          "s3Key": "amplify-builds/usersFunc-6230744834486c306e70-build.zip"
+          "s3Key": "amplify-builds/usersFunc-4a527444656946534752-build.zip"
         }
       },
       "api": {
