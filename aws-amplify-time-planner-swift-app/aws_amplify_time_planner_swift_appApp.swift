@@ -34,7 +34,7 @@ struct aws_amplify_time_planner_swift_appApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(coreDM: CoreDataManager())
         }
     }
 }
