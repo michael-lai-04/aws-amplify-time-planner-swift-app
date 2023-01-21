@@ -10,6 +10,7 @@ import Amplify
 
 struct UserService {
     func postTodo() async {
+        
         let message = #"{"message": "my new Todo"}"#
         let request = RESTRequest(path: "/users", body: message.data(using: .utf8))
         do {
