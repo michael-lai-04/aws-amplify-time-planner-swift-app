@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		154BCF062978D106002635AA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BCF052978D105002635AA /* AuthService.swift */; };
 		154BCF082978D182002635AA /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BCF072978D182002635AA /* UserService.swift */; };
-		154BCF1229791ECA002635AA /* Model in Resources */ = {isa = PBXBuildFile; fileRef = 154BCF1129791ECA002635AA /* Model */; };
 		15535AFD2972F69F00A0E422 /* aws_amplify_time_planner_swift_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15535AFC2972F69F00A0E422 /* aws_amplify_time_planner_swift_appApp.swift */; };
 		15535AFF2972F69F00A0E422 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15535AFE2972F69F00A0E422 /* ContentView.swift */; };
 		15535B012972F6A300A0E422 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15535B002972F6A300A0E422 /* Assets.xcassets */; };
@@ -20,6 +19,12 @@
 		156359842976465700FE8063 /* aws-amplify-time-planner-swift-app-model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 156359822976465700FE8063 /* aws-amplify-time-planner-swift-app-model.xcdatamodeld */; };
 		15CFEBC0297930F100FD9565 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFEBBF297930F100FD9565 /* DateViewModel.swift */; };
 		15CFEBC3297A3D9F00FD9565 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFEBC2297A3D9F00FD9565 /* DateHelper.swift */; };
+		15CFEBC6297D95CF00FD9565 /* HomeScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFEBC5297D95CE00FD9565 /* HomeScheduleView.swift */; };
+		15CFEBCA297D96F000FD9565 /* PlannedEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFEBC9297D96F000FD9565 /* PlannedEventModel.swift */; };
+		15CFEBCC297D973100FD9565 /* PlannedEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFEBCB297D973100FD9565 /* PlannedEventViewModel.swift */; };
+		15CFEBCE297D97A700FD9565 /* TimeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFEBCD297D97A600FD9565 /* TimeSectionView.swift */; };
+		15CFEBD0297D98D200FD9565 /* PlannedEventSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFEBCF297D98D200FD9565 /* PlannedEventSectionView.swift */; };
+		15CFEBD2297D990C00FD9565 /* ActualEventSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFEBD1297D990B00FD9565 /* ActualEventSectionView.swift */; };
 		A344950688FAEF109D74FA8F /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 79D742C1B144444EF9931E7D /* awsconfiguration.json */; };
 		B0F6B018BF6B60D4FA0F4FE1 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0251B55F8FC1BE4D6C3A726F /* amplifyconfiguration.json */; };
 /* End PBXBuildFile section */
@@ -28,7 +33,6 @@
 		0251B55F8FC1BE4D6C3A726F /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		154BCF052978D105002635AA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		154BCF072978D182002635AA /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		154BCF1129791ECA002635AA /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
 		15535AF92972F69F00A0E422 /* aws-amplify-time-planner-swift-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aws-amplify-time-planner-swift-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15535AFC2972F69F00A0E422 /* aws_amplify_time_planner_swift_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aws_amplify_time_planner_swift_appApp.swift; sourceTree = "<group>"; };
 		15535AFE2972F69F00A0E422 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +41,12 @@
 		156359832976465700FE8063 /* aws-amplify-time-planner-swift-app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "aws-amplify-time-planner-swift-app.xcdatamodel"; sourceTree = "<group>"; };
 		15CFEBBF297930F100FD9565 /* DateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
 		15CFEBC2297A3D9F00FD9565 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		15CFEBC5297D95CE00FD9565 /* HomeScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScheduleView.swift; sourceTree = "<group>"; };
+		15CFEBC9297D96F000FD9565 /* PlannedEventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedEventModel.swift; sourceTree = "<group>"; };
+		15CFEBCB297D973100FD9565 /* PlannedEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedEventViewModel.swift; sourceTree = "<group>"; };
+		15CFEBCD297D97A600FD9565 /* TimeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSectionView.swift; sourceTree = "<group>"; };
+		15CFEBCF297D98D200FD9565 /* PlannedEventSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedEventSectionView.swift; sourceTree = "<group>"; };
+		15CFEBD1297D990B00FD9565 /* ActualEventSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualEventSectionView.swift; sourceTree = "<group>"; };
 		79D742C1B144444EF9931E7D /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +76,7 @@
 		154BCF0929790865002635AA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				15CFEBC4297D95B000FD9565 /* HomeScheduleView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -90,9 +101,9 @@
 		15535AFB2972F69F00A0E422 /* aws-amplify-time-planner-swift-app */ = {
 			isa = PBXGroup;
 			children = (
+				15CFEBC7297D96C900FD9565 /* Model */,
 				15CFEBC1297A3D8600FD9565 /* Helper */,
 				15CFEBBE297930D300FD9565 /* ViewModel */,
-				154BCF1129791ECA002635AA /* Model */,
 				156359952977E70C00FE8063 /* Service */,
 				15535AFC2972F69F00A0E422 /* aws_amplify_time_planner_swift_appApp.swift */,
 				15535AFE2972F69F00A0E422 /* ContentView.swift */,
@@ -125,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				15CFEBBF297930F100FD9565 /* DateViewModel.swift */,
+				15CFEBCB297D973100FD9565 /* PlannedEventViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -135,6 +147,33 @@
 				15CFEBC2297A3D9F00FD9565 /* DateHelper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		15CFEBC4297D95B000FD9565 /* HomeScheduleView */ = {
+			isa = PBXGroup;
+			children = (
+				15CFEBC5297D95CE00FD9565 /* HomeScheduleView.swift */,
+				15CFEBCD297D97A600FD9565 /* TimeSectionView.swift */,
+				15CFEBCF297D98D200FD9565 /* PlannedEventSectionView.swift */,
+				15CFEBD1297D990B00FD9565 /* ActualEventSectionView.swift */,
+			);
+			path = HomeScheduleView;
+			sourceTree = "<group>";
+		};
+		15CFEBC7297D96C900FD9565 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15CFEBC8297D96D600FD9565 /* Core Data */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		15CFEBC8297D96D600FD9565 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				15CFEBC9297D96F000FD9565 /* PlannedEventModel.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +242,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				154BCF1229791ECA002635AA /* Model in Resources */,
 				15535B042972F6A300A0E422 /* Preview Assets.xcassets in Resources */,
 				15535B012972F6A300A0E422 /* Assets.xcassets in Resources */,
 				A344950688FAEF109D74FA8F /* awsconfiguration.json in Resources */,
@@ -218,8 +256,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15CFEBD0297D98D200FD9565 /* PlannedEventSectionView.swift in Sources */,
 				15CFEBC0297930F100FD9565 /* DateViewModel.swift in Sources */,
 				15535AFF2972F69F00A0E422 /* ContentView.swift in Sources */,
+				15CFEBC6297D95CF00FD9565 /* HomeScheduleView.swift in Sources */,
+				15CFEBCA297D96F000FD9565 /* PlannedEventModel.swift in Sources */,
+				15CFEBCC297D973100FD9565 /* PlannedEventViewModel.swift in Sources */,
+				15CFEBCE297D97A700FD9565 /* TimeSectionView.swift in Sources */,
+				15CFEBD2297D990C00FD9565 /* ActualEventSectionView.swift in Sources */,
 				154BCF082978D182002635AA /* UserService.swift in Sources */,
 				15535AFD2972F69F00A0E422 /* aws_amplify_time_planner_swift_appApp.swift in Sources */,
 				156359842976465700FE8063 /* aws-amplify-time-planner-swift-app-model.xcdatamodeld in Sources */,
