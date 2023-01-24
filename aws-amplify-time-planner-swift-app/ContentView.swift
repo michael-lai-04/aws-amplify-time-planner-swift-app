@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    let coreDM = CoreDataManager()
+    
     var body: some View {
         HomeScheduleView()
     }

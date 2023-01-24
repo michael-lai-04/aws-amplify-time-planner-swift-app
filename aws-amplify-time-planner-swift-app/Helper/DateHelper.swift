@@ -9,8 +9,8 @@ import Foundation
 
 class DateHelper {
     
-     func formatFromDateToTimestamp (date: String) -> TimeInterval {
-         let dateFormatter = DateFormatter()
+     func formatFromDateStringToTimestamp (date: String) -> TimeInterval {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh"
         let date = dateFormatter.date(from: date)
         let timestamp = date!.timeIntervalSince1970
@@ -30,6 +30,15 @@ class DateHelper {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let date = dateFormatter.date(from: dateString)
         return date
+    }
+    
+    func formatFromDateToTimestamp (date:Date) -> TimeInterval{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh"
+        let dateString = dateFormatter.string(from: date)
+        let formattedDate = dateFormatter.date(from: dateString)
+        let timestamp = formattedDate!.timeIntervalSince1970
+        return timestamp
     }
     
 }

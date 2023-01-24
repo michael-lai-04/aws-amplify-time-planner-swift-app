@@ -12,11 +12,10 @@ class PlannedEventViewModel: ObservableObject {
     @Published var plannedMorningEvents: [PlannedEvent]
 
     let dateHelper = DateHelper()
+    let coreDM = CoreDataManager()
     
     init(){
-        plannedMorningEvents = [
-            PlannedEvent(name: "起床", timestamp:dateHelper.formatFromDateToTimestamp(date: "2023-01-18 06") )
-        ]
+        plannedMorningEvents = coreDM.getAllPlannedEvent()
     }
         
     func generatePlannedMorningEventsDict () -> [TimeInterval: String] {
