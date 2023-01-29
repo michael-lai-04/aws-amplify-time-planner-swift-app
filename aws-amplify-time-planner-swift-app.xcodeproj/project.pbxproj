@@ -24,6 +24,8 @@
 		15CFEBD0297D98D200FD9565 /* PlannedEventSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFEBCF297D98D200FD9565 /* PlannedEventSectionView.swift */; };
 		15CFEBD2297D990C00FD9565 /* ActualEventSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFEBD1297D990B00FD9565 /* ActualEventSectionView.swift */; };
 		15CFEBE1297E6DCF00FD9565 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFEBE0297E6DCE00FD9565 /* CoreDataManager.swift */; };
+		15E8A47A2980435E00BFAC1B /* PlannedEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A4782980435E00BFAC1B /* PlannedEvent+CoreDataClass.swift */; };
+		15E8A47B2980435E00BFAC1B /* PlannedEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A4792980435E00BFAC1B /* PlannedEvent+CoreDataProperties.swift */; };
 		A344950688FAEF109D74FA8F /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 79D742C1B144444EF9931E7D /* awsconfiguration.json */; };
 		B0F6B018BF6B60D4FA0F4FE1 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0251B55F8FC1BE4D6C3A726F /* amplifyconfiguration.json */; };
 /* End PBXBuildFile section */
@@ -45,6 +47,8 @@
 		15CFEBCF297D98D200FD9565 /* PlannedEventSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedEventSectionView.swift; sourceTree = "<group>"; };
 		15CFEBD1297D990B00FD9565 /* ActualEventSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualEventSectionView.swift; sourceTree = "<group>"; };
 		15CFEBE0297E6DCE00FD9565 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		15E8A4782980435E00BFAC1B /* PlannedEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlannedEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		15E8A4792980435E00BFAC1B /* PlannedEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlannedEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		79D742C1B144444EF9931E7D /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +173,8 @@
 		15CFEBC8297D96D600FD9565 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				15E8A4782980435E00BFAC1B /* PlannedEvent+CoreDataClass.swift */,
+				15E8A4792980435E00BFAC1B /* PlannedEvent+CoreDataProperties.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -265,6 +271,8 @@
 				15535AFF2972F69F00A0E422 /* ContentView.swift in Sources */,
 				15CFEBC6297D95CF00FD9565 /* HomeScheduleView.swift in Sources */,
 				15CFEBCC297D973100FD9565 /* PlannedEventViewModel.swift in Sources */,
+				15E8A47A2980435E00BFAC1B /* PlannedEvent+CoreDataClass.swift in Sources */,
+				15E8A47B2980435E00BFAC1B /* PlannedEvent+CoreDataProperties.swift in Sources */,
 				15CFEBCE297D97A700FD9565 /* TimeSectionView.swift in Sources */,
 				15CFEBD2297D990C00FD9565 /* ActualEventSectionView.swift in Sources */,
 				15CFEBE1297E6DCF00FD9565 /* CoreDataManager.swift in Sources */,

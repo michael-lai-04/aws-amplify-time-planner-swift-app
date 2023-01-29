@@ -63,7 +63,7 @@ struct HomeScheduleView: View {
             TabView(selection: $selection){
                 PlannedEventSectionView()
                     .tag(0)
-                TimeSectionView()
+                TimeSectionView(scheduleDate: $scheduleDate)
                     .tag(1)
                 ActualEventSectionView()
                     .tag(2)

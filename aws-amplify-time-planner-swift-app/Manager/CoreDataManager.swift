@@ -33,12 +33,12 @@ class CoreDataManager {
         }
     }
 
-    func savePlannedEvent(name:String){
+    func savePlannedEvent(name:String, date: Date){
         
         let plannedEvent = PlannedEvent(context:persistantContainer.viewContext)
+        
         plannedEvent.id = UUID()
         plannedEvent.name = name
-        let date = Date()
         let timestamp = dateHelper.formatFromDateToTimestamp(date: date)
         plannedEvent.timestamp = timestamp
         

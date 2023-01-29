@@ -32,6 +32,13 @@ class DateHelper {
         return date
     }
     
+    func formateFromDateWithHourStringToDate (dateString: String) -> Date?{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh"
+        let date = dateFormatter.date(from: dateString)
+        return date
+    }
+    
     func formatFromDateToTimestamp (date:Date) -> TimeInterval{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh"
