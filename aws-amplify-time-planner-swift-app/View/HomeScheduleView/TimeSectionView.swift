@@ -36,7 +36,7 @@ struct TimeSectionView: View{
     ScrollView{
             HStack(alignment: .top){
                 VStack(alignment:.center, spacing:10){
-                    Text("hello")
+                    Text("Dummy Text")
                         .opacity(0)
                     ForEach(morningHours){
                         hour in
@@ -44,9 +44,16 @@ struct TimeSectionView: View{
                             selectedDate = hour
                         },label:{
                             Text(plannedEventViewModel.plannedMorningEventsDict[dateHelper.formatFromDateStringToTimestamp(date:  "\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")] ??
-                                "\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")
+                                " ")
+                            .frame(
+                                minWidth: 0,
+                                maxWidth: .infinity
+                            )
+                            .overlay(Rectangle().frame(width: nil, height: 1, alignment: .bottom).foregroundColor(Color("#B1B2B4")), alignment: .bottom)
                         }
                         )
+                        .buttonStyle(.plain)
+    
                     }
                 }
                 .sheet(item: $selectedDate){
@@ -89,7 +96,9 @@ struct TimeSectionView: View{
                     maxWidth: .infinity
                 )
             }
-        }.onAppear{
+        }
+    .padding()
+    .onAppear{
             plannedEventViewModel.updatePlannedMorningEventsDict()
         }
     }
@@ -103,8 +112,6 @@ struct EditPlannedEventSheet: View{
     let dateHelper = DateHelper()
         
     let coreDM = CoreDataManager()
-
-//    let updatePlannedEvent: () -> Void
     
     @State var eventName: String = ""
     

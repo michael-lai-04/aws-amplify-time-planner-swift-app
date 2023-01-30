@@ -71,25 +71,20 @@ struct HomeScheduleView: View {
             }
             .tabViewStyle(
                 .page(indexDisplayMode: .never))
-            .border(Color.blue, width: 2)
-    //        .indexViewStyle(.page(backgroundDisplayMode: .always))
         }
             }
-//                    .background{
-//                        Color("#F8F5ED")
-//                        }
-//                    .navigationTitle(scheduleDate)
+
                     .toolbar{
                         ToolbarItem(placement: .principal){
                             HStack{
-                                Button{
-                                    subtractOneDayToScheduleDate()
-                                }label:{
-                                    Image(systemName:"arrow.left")
-                                }.buttonStyle(.plain)
-                                DatePicker("", selection:$scheduleDate, displayedComponents: .date)
+                                DatePicker(selection:$scheduleDate, displayedComponents: .date){
+                                    Button{
+                                        subtractOneDayToScheduleDate()
+                                    }label:{
+                                        Image(systemName:"arrow.left")
+                                    }.buttonStyle(.plain)
+                                }.fixedSize().frame(alignment:.leading).id(scheduleDate)
                                    
-//                                Text(scheduleDate)
                                 Button{
                                     addOneDayToScheduleDate()
                                 }label:{
