@@ -22,7 +22,7 @@ struct TimeSectionView: View{
         Hour(value: "09"),
         Hour(value: "10"),
         Hour(value: "11"),
-]
+    ]
     let afternoonHours: [String] = ["12", "13","14","15","16", "17", "18"]
     let eveningHours: [String] = ["19","20","21","22","23"]
     let midnightHours: [String] = ["00", "01", "02", "03", "04", "05"]
@@ -33,7 +33,7 @@ struct TimeSectionView: View{
     @Binding var scheduleDate:Date
     
     var body: some View {
-    ScrollView{
+        ScrollView{
             HStack(alignment: .top){
                 VStack(alignment:.center, spacing:10){
                     Text("Dummy Text")
@@ -44,7 +44,7 @@ struct TimeSectionView: View{
                             selectedDate = hour
                         },label:{
                             Text(plannedEventViewModel.plannedMorningEventsDict[dateHelper.formatFromDateStringToTimestamp(date:  "\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")] ??
-                                " ")
+                                 " ")
                             .frame(
                                 minWidth: 0,
                                 maxWidth: .infinity
@@ -53,7 +53,7 @@ struct TimeSectionView: View{
                         }
                         )
                         .buttonStyle(.plain)
-    
+                        
                     }
                 }
                 .sheet(item: $selectedDate){
@@ -97,8 +97,8 @@ struct TimeSectionView: View{
                 )
             }
         }
-    .padding()
-    .onAppear{
+        .padding()
+        .onAppear{
             plannedEventViewModel.updatePlannedMorningEventsDict()
         }
     }
@@ -108,9 +108,9 @@ struct EditPlannedEventSheet: View{
     
     var hour: Hour
     @Binding var scheduleDate: Date
-
+    
     let dateHelper = DateHelper()
-        
+    
     let coreDM = CoreDataManager()
     
     @State var eventName: String = ""
@@ -126,10 +126,10 @@ struct EditPlannedEventSheet: View{
                 .padding()
             Button {
                 
-                    coreDM.savePlannedEvent(name: eventName, date: dateHelper.formateFromDateWithHourStringToDate(dateString: "\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")!
-                    )
-                    plannedEventViewModel.updatePlannedMorningEventsDict()
-                    presentationMode.wrappedValue.dismiss()
+                coreDM.savePlannedEvent(name: eventName, date: dateHelper.formateFromDateWithHourStringToDate(dateString: "\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")!
+                )
+                plannedEventViewModel.updatePlannedMorningEventsDict()
+                presentationMode.wrappedValue.dismiss()
                 
             } label: {
                 Text("Submit")
@@ -142,6 +142,6 @@ struct EditPlannedEventSheet: View{
 struct TimeSectionView_Previews: PreviewProvider {
     static var previews: some View {
         HomeScheduleView()
-//        TimeSectionView()
+        //        TimeSectionView()
     }
 }
