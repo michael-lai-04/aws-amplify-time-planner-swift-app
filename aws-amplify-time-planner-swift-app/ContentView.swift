@@ -11,7 +11,18 @@ struct ContentView: View {
     let coreDM = CoreDataManager()
     
     var body: some View {
-        HomeScheduleView()
+        TabView{
+            HomeScheduleView()
+                .tabItem{
+                    Image(systemName:"clock")
+                    Text("Schedule")
+                }
+            SettingView()
+                .tabItem{
+                    Image(systemName: "gearshape")
+                    Text("Setting")
+                }
+        }
     }
 }
 

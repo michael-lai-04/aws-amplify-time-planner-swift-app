@@ -11,21 +11,50 @@ struct Hour: Identifiable {
     let id = UUID()
     let value: String
 }
+
+let morningHours: [Hour] = [
+    Hour(value: "06"),
+    Hour(value: "07"),
+    Hour(value: "08"),
+    Hour(value: "09"),
+    Hour(value: "10"),
+    Hour(value: "11"),
+]
+
+let afternoonHours: [Hour] = [
+    Hour(value:"12" ),
+    Hour(value: "13"),
+    Hour(value: "14"),
+    Hour(value: "15"),
+    Hour(value: "16"),
+    Hour(value: "17"),
+    Hour(value: "18"),
+]
+
+let eveningHours: [Hour] = [
+    Hour(value:"19" ),
+    Hour(value: "20"),
+    Hour(value: "21"),
+    Hour(value: "22"),
+    Hour(value: "23"),
+]
+
+let midnightHours: [Hour] = [
+    Hour(value:"00" ),
+    Hour(value: "01"),
+    Hour(value: "02"),
+    Hour(value: "03"),
+    Hour(value: "04"),
+    Hour(value: "05"),
+]
+
+
 struct TimeSectionView: View{
     
     let dateHelper = DateHelper()
     
-    let morningHours: [Hour] = [
-        Hour(value: "06"),
-        Hour(value: "07"),
-        Hour(value: "08"),
-        Hour(value: "09"),
-        Hour(value: "10"),
-        Hour(value: "11"),
-    ]
-    let afternoonHours: [String] = ["12", "13","14","15","16", "17", "18"]
-    let eveningHours: [String] = ["19","20","21","22","23"]
-    let midnightHours: [String] = ["00", "01", "02", "03", "04", "05"]
+    let scheduleTimes = ["Morning", "Afternoon", "Evening", "Midnight"]
+    let scheduleHours = [morningHours, afternoonHours, eveningHours, midnightHours ]
     
     @StateObject var plannedEventViewModel = PlannedEventViewModel()
     @State private var selectedDate: Hour? = nil
@@ -53,8 +82,11 @@ struct TimeSectionView: View{
                         }
                         )
                         .buttonStyle(.plain)
-                        
                     }
+                    
+                    Text("Dummy Text")
+                        .opacity(0)
+                    
                 }
                 .sheet(item: $selectedDate){
                     hour in
@@ -67,25 +99,13 @@ struct TimeSectionView: View{
                 )
                 
                 VStack(spacing:10){
-                    Text("Morning")
-                    ForEach(morningHours){
-                        hour in
-                        Text("\(hour.value):00")
-                    }
-                    Text("Afternoon")
-                    ForEach(afternoonHours, id: \.self){
-                        hour in
-                        Text("\(hour):00")
-                    }
-                    Text("evening")
-                    ForEach(eveningHours, id: \.self){
-                        hour in
-                        Text("\(hour):00")
-                    }
-                    Text("midnight")
-                    ForEach(midnightHours, id: \.self){
-                        hour in
-                        Text("\(hour):00")
+                    ForEach(scheduleTimes.indices, id: \.self){
+                        index in
+                        Text(scheduleTimes[index])
+                        ForEach(scheduleHours[index]){
+                            hour in
+                            Text("\(hour.value):00")
+                        }
                     }
                 }
                 VStack(alignment:.center){

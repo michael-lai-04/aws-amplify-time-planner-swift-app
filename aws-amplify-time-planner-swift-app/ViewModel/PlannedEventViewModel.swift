@@ -24,14 +24,6 @@ class PlannedEventViewModel: ObservableObject {
         plannedMorningEvents = coreDM.getAllPlannedEvent()
     }
         
-//    func generatePlannedMorningEventsDict () -> [TimeInterval: String] {
-//        var dict: [TimeInterval: String]   = [:]
-//        for event in plannedMorningEvents{
-//            dict[event.timestamp] = event.name
-//        }
-//        return dict
-//    }
-    
     func updatePlannedMorningEventsDict() {
         updateAllPlannedEvent()
         var dict: [TimeInterval: String]   = [:]

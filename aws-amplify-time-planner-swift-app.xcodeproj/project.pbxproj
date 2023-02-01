@@ -26,6 +26,7 @@
 		15CFEBE1297E6DCF00FD9565 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFEBE0297E6DCE00FD9565 /* CoreDataManager.swift */; };
 		15E8A47A2980435E00BFAC1B /* PlannedEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A4782980435E00BFAC1B /* PlannedEvent+CoreDataClass.swift */; };
 		15E8A47B2980435E00BFAC1B /* PlannedEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A4792980435E00BFAC1B /* PlannedEvent+CoreDataProperties.swift */; };
+		15E8A47F2989236D00BFAC1B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A47E2989236D00BFAC1B /* SettingView.swift */; };
 		A344950688FAEF109D74FA8F /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 79D742C1B144444EF9931E7D /* awsconfiguration.json */; };
 		B0F6B018BF6B60D4FA0F4FE1 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0251B55F8FC1BE4D6C3A726F /* amplifyconfiguration.json */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		15CFEBE0297E6DCE00FD9565 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		15E8A4782980435E00BFAC1B /* PlannedEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlannedEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		15E8A4792980435E00BFAC1B /* PlannedEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlannedEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		15E8A47E2989236D00BFAC1B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		79D742C1B144444EF9931E7D /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 		154BCF0929790865002635AA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				15E8A47D2989235600BFAC1B /* SettingView */,
 				15CFEBC4297D95B000FD9565 /* HomeScheduleView */,
 			);
 			path = View;
@@ -187,6 +190,14 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		15E8A47D2989235600BFAC1B /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				15E8A47E2989236D00BFAC1B /* SettingView.swift */,
+			);
+			path = SettingView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -273,6 +284,7 @@
 				15CFEBCC297D973100FD9565 /* PlannedEventViewModel.swift in Sources */,
 				15E8A47A2980435E00BFAC1B /* PlannedEvent+CoreDataClass.swift in Sources */,
 				15E8A47B2980435E00BFAC1B /* PlannedEvent+CoreDataProperties.swift in Sources */,
+				15E8A47F2989236D00BFAC1B /* SettingView.swift in Sources */,
 				15CFEBCE297D97A700FD9565 /* TimeSectionView.swift in Sources */,
 				15CFEBD2297D990C00FD9565 /* ActualEventSectionView.swift in Sources */,
 				15CFEBE1297E6DCF00FD9565 /* CoreDataManager.swift in Sources */,
