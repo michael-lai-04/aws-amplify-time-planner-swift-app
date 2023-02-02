@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1531D2C8298B4F2400157780 /* PlannedEventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1531D2C7298B4F2400157780 /* PlannedEventManager.swift */; };
+		1531D2CA298B546000157780 /* ActualEventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1531D2C9298B546000157780 /* ActualEventManager.swift */; };
+		1531D2D0298B55B800157780 /* ActualEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1531D2CF298B55B800157780 /* ActualEventViewModel.swift */; };
 		154BCF062978D106002635AA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BCF052978D105002635AA /* AuthService.swift */; };
 		154BCF082978D182002635AA /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BCF072978D182002635AA /* UserService.swift */; };
 		15535AFD2972F69F00A0E422 /* aws_amplify_time_planner_swift_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15535AFC2972F69F00A0E422 /* aws_amplify_time_planner_swift_appApp.swift */; };
@@ -24,8 +27,10 @@
 		15CFEBD0297D98D200FD9565 /* PlannedEventSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFEBCF297D98D200FD9565 /* PlannedEventSectionView.swift */; };
 		15CFEBD2297D990C00FD9565 /* ActualEventSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFEBD1297D990B00FD9565 /* ActualEventSectionView.swift */; };
 		15CFEBE1297E6DCF00FD9565 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFEBE0297E6DCE00FD9565 /* CoreDataManager.swift */; };
-		15E8A47A2980435E00BFAC1B /* PlannedEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A4782980435E00BFAC1B /* PlannedEvent+CoreDataClass.swift */; };
-		15E8A47B2980435E00BFAC1B /* PlannedEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A4792980435E00BFAC1B /* PlannedEvent+CoreDataProperties.swift */; };
+		15E4065B298B609500705D80 /* PlannedEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E40657298B609500705D80 /* PlannedEvent+CoreDataClass.swift */; };
+		15E4065C298B609500705D80 /* PlannedEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E40658298B609500705D80 /* PlannedEvent+CoreDataProperties.swift */; };
+		15E4065D298B609500705D80 /* ActualEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E40659298B609500705D80 /* ActualEvent+CoreDataClass.swift */; };
+		15E4065E298B609500705D80 /* ActualEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4065A298B609500705D80 /* ActualEvent+CoreDataProperties.swift */; };
 		15E8A47F2989236D00BFAC1B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8A47E2989236D00BFAC1B /* SettingView.swift */; };
 		A344950688FAEF109D74FA8F /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 79D742C1B144444EF9931E7D /* awsconfiguration.json */; };
 		B0F6B018BF6B60D4FA0F4FE1 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0251B55F8FC1BE4D6C3A726F /* amplifyconfiguration.json */; };
@@ -33,6 +38,9 @@
 
 /* Begin PBXFileReference section */
 		0251B55F8FC1BE4D6C3A726F /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		1531D2C7298B4F2400157780 /* PlannedEventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedEventManager.swift; sourceTree = "<group>"; };
+		1531D2C9298B546000157780 /* ActualEventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualEventManager.swift; sourceTree = "<group>"; };
+		1531D2CF298B55B800157780 /* ActualEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualEventViewModel.swift; sourceTree = "<group>"; };
 		154BCF052978D105002635AA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		154BCF072978D182002635AA /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		15535AF92972F69F00A0E422 /* aws-amplify-time-planner-swift-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aws-amplify-time-planner-swift-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,8 +56,10 @@
 		15CFEBCF297D98D200FD9565 /* PlannedEventSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedEventSectionView.swift; sourceTree = "<group>"; };
 		15CFEBD1297D990B00FD9565 /* ActualEventSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualEventSectionView.swift; sourceTree = "<group>"; };
 		15CFEBE0297E6DCE00FD9565 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		15E8A4782980435E00BFAC1B /* PlannedEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlannedEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
-		15E8A4792980435E00BFAC1B /* PlannedEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlannedEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		15E40657298B609500705D80 /* PlannedEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlannedEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		15E40658298B609500705D80 /* PlannedEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlannedEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		15E40659298B609500705D80 /* ActualEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActualEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		15E4065A298B609500705D80 /* ActualEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActualEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		15E8A47E2989236D00BFAC1B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		79D742C1B144444EF9931E7D /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				15CFEBCB297D973100FD9565 /* PlannedEventViewModel.swift */,
+				1531D2CF298B55B800157780 /* ActualEventViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -176,8 +187,10 @@
 		15CFEBC8297D96D600FD9565 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				15E8A4782980435E00BFAC1B /* PlannedEvent+CoreDataClass.swift */,
-				15E8A4792980435E00BFAC1B /* PlannedEvent+CoreDataProperties.swift */,
+				15E40657298B609500705D80 /* PlannedEvent+CoreDataClass.swift */,
+				15E40658298B609500705D80 /* PlannedEvent+CoreDataProperties.swift */,
+				15E40659298B609500705D80 /* ActualEvent+CoreDataClass.swift */,
+				15E4065A298B609500705D80 /* ActualEvent+CoreDataProperties.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -186,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				15CFEBE0297E6DCE00FD9565 /* CoreDataManager.swift */,
+				1531D2C7298B4F2400157780 /* PlannedEventManager.swift */,
+				1531D2C9298B546000157780 /* ActualEventManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -280,17 +295,22 @@
 			files = (
 				15CFEBD0297D98D200FD9565 /* PlannedEventSectionView.swift in Sources */,
 				15535AFF2972F69F00A0E422 /* ContentView.swift in Sources */,
+				1531D2CA298B546000157780 /* ActualEventManager.swift in Sources */,
 				15CFEBC6297D95CF00FD9565 /* HomeScheduleView.swift in Sources */,
+				1531D2C8298B4F2400157780 /* PlannedEventManager.swift in Sources */,
 				15CFEBCC297D973100FD9565 /* PlannedEventViewModel.swift in Sources */,
-				15E8A47A2980435E00BFAC1B /* PlannedEvent+CoreDataClass.swift in Sources */,
-				15E8A47B2980435E00BFAC1B /* PlannedEvent+CoreDataProperties.swift in Sources */,
 				15E8A47F2989236D00BFAC1B /* SettingView.swift in Sources */,
 				15CFEBCE297D97A700FD9565 /* TimeSectionView.swift in Sources */,
 				15CFEBD2297D990C00FD9565 /* ActualEventSectionView.swift in Sources */,
+				15E4065C298B609500705D80 /* PlannedEvent+CoreDataProperties.swift in Sources */,
+				15E4065D298B609500705D80 /* ActualEvent+CoreDataClass.swift in Sources */,
 				15CFEBE1297E6DCF00FD9565 /* CoreDataManager.swift in Sources */,
 				154BCF082978D182002635AA /* UserService.swift in Sources */,
 				15535AFD2972F69F00A0E422 /* aws_amplify_time_planner_swift_appApp.swift in Sources */,
+				15E4065E298B609500705D80 /* ActualEvent+CoreDataProperties.swift in Sources */,
 				156359842976465700FE8063 /* aws-amplify-time-planner-swift-app-model.xcdatamodeld in Sources */,
+				1531D2D0298B55B800157780 /* ActualEventViewModel.swift in Sources */,
+				15E4065B298B609500705D80 /* PlannedEvent+CoreDataClass.swift in Sources */,
 				15CFEBC3297A3D9F00FD9565 /* DateHelper.swift in Sources */,
 				154BCF062978D106002635AA /* AuthService.swift in Sources */,
 			);

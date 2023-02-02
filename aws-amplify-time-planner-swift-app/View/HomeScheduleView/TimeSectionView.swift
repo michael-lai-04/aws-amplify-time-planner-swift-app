@@ -57,38 +57,42 @@ struct TimeSectionView: View{
     let scheduleHours = [morningHours, afternoonHours, eveningHours, midnightHours ]
     
     @StateObject var plannedEventViewModel = PlannedEventViewModel()
-    @State private var selectedDate: Hour? = nil
+    @StateObject var actualEventViewModel = ActualEventViewModel()
     
     @Binding var scheduleDate:Date
+
+    @State private var selectedPlannedEventHour: Hour? = nil
+    @State private var selectedActualEventHour:Hour? = nil
     
     var body: some View {
         ScrollView{
             HStack(alignment: .top){
                 VStack(alignment:.center, spacing:10){
-                    Text("Dummy Text")
-                        .opacity(0)
-                    ForEach(morningHours){
-                        hour in
-                        Button(action:{
-                            selectedDate = hour
-                        },label:{
-                            Text(plannedEventViewModel.plannedMorningEventsDict[dateHelper.formatFromDateStringToTimestamp(date:  "\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")] ??
-                                 " ")
-                            .frame(
-                                minWidth: 0,
-                                maxWidth: .infinity
-                            )
-                            .overlay(Rectangle().frame(width: nil, height: 1, alignment: .bottom).foregroundColor(Color("#B1B2B4")), alignment: .bottom)
-                        }
-                        )
-                        .buttonStyle(.plain)
+                    ForEach(scheduleHours.indices, id: \.self){
+                        index in
+                        Text("Dummy Text")
+                            .opacity(0)
+                        
+                            ForEach(scheduleHours[index]){
+                                hour in
+                                Button(action:{
+                                    selectedPlannedEventHour = hour
+                                },label:{
+                                    Text(plannedEventViewModel.plannedEventsDict[dateHelper.formatFromDateStringToTimestamp(date:  "\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")] ??
+                                         " ")
+                                    .frame(
+                                        minWidth: 0,
+                                        maxWidth: .infinity
+                                    )
+                                    .overlay(Rectangle().frame(width: nil, height: 1, alignment: .bottom).foregroundColor(Color("#B1B2B4")), alignment: .bottom)
+                                }
+                                )
+                                .buttonStyle(.plain)
+                            }
                     }
                     
-                    Text("Dummy Text")
-                        .opacity(0)
-                    
                 }
-                .sheet(item: $selectedDate){
+                .sheet(item: $selectedPlannedEventHour){
                     hour in
                     EditPlannedEventSheet(hour: hour, scheduleDate: $scheduleDate)
                         .environmentObject(plannedEventViewModel)
@@ -108,8 +112,36 @@ struct TimeSectionView: View{
                         }
                     }
                 }
-                VStack(alignment:.center){
-                    Text("hello")
+                
+                VStack(alignment:.center,  spacing:10){
+                    ForEach(scheduleHours.indices, id: \.self){
+                        index in
+                        Text("Dummy Text")
+                            .opacity(0)
+                        
+                            ForEach(scheduleHours[index]){
+                                hour in
+                                Button(action:{
+                                    selectedActualEventHour = hour
+                                },label:{
+                                    Text(
+                                        actualEventViewModel.actualEventsDict[dateHelper.formatFromDateStringToTimestamp(date:  "\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")] ??
+                                         " ")
+                                    .frame(
+                                        minWidth: 0,
+                                        maxWidth: .infinity
+                                    )
+                                    .overlay(Rectangle().frame(width: nil, height: 1, alignment: .bottom).foregroundColor(Color("#B1B2B4")), alignment: .bottom)
+                                }
+                                )
+                                .buttonStyle(.plain)
+                            }
+                    }
+                }
+                .sheet(item: $selectedActualEventHour){
+                    hour in
+                    EditActualEventSheet(hour: hour, scheduleDate: $scheduleDate)
+                        .environmentObject(actualEventViewModel)
                 }
                 .frame(
                     minWidth:0,
@@ -119,7 +151,42 @@ struct TimeSectionView: View{
         }
         .padding()
         .onAppear{
-            plannedEventViewModel.updatePlannedMorningEventsDict()
+            plannedEventViewModel.updatePlannedEventsDict()
+        }
+    }
+}
+
+struct EditActualEventSheet: View {
+    
+    var hour: Hour
+    @Binding var scheduleDate: Date
+
+    let dateHelper = DateHelper()
+    let actualEventManager = ActualEventManager()
+    
+    @State var eventName: String = ""
+
+    @EnvironmentObject var actualEventViewModel: ActualEventViewModel
+    
+    @Environment(\.presentationMode) var presentationMode
+
+    var body: some View {
+        VStack{
+            Text("Actual Event")
+            Text("\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")
+            TextField("Event Name", text: $eventName)
+                .padding()
+            Button {
+                
+                actualEventManager.saveActualEvent(name: eventName, date: dateHelper.formateFromDateWithHourStringToDate(dateString: "\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")!
+                )
+                actualEventViewModel.updateActualEventsDict()
+                presentationMode.wrappedValue.dismiss()
+                
+            } label: {
+                Text("Submit")
+                    .padding()
+            }
         }
     }
 }
@@ -130,8 +197,7 @@ struct EditPlannedEventSheet: View{
     @Binding var scheduleDate: Date
     
     let dateHelper = DateHelper()
-    
-    let coreDM = CoreDataManager()
+    let plannedEventManager = PlannedEventManager()
     
     @State var eventName: String = ""
     
@@ -141,14 +207,16 @@ struct EditPlannedEventSheet: View{
     
     var body: some View{
         VStack{
+            Text("Planned Event")
+
             Text("\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")
             TextField("Event Name", text: $eventName)
                 .padding()
             Button {
                 
-                coreDM.savePlannedEvent(name: eventName, date: dateHelper.formateFromDateWithHourStringToDate(dateString: "\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")!
+                plannedEventManager.savePlannedEvent(name: eventName, date: dateHelper.formateFromDateWithHourStringToDate(dateString: "\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")!
                 )
-                plannedEventViewModel.updatePlannedMorningEventsDict()
+                plannedEventViewModel.updatePlannedEventsDict()
                 presentationMode.wrappedValue.dismiss()
                 
             } label: {

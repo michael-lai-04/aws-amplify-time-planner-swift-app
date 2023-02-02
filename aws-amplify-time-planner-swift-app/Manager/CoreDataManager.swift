@@ -11,7 +11,6 @@ import CoreData
 class CoreDataManager {
     let persistantContainer: NSPersistentContainer
     let modelName = "aws-amplify-time-planner-swift-app-model"
-    let dateHelper = DateHelper()
     
     init(){
         persistantContainer = NSPersistentContainer(name: modelName)
@@ -19,33 +18,6 @@ class CoreDataManager {
             if let error = error{
                 fatalError("Core Data Store failed \(error.localizedDescription)")
             }
-        }
-    }
-    
-    func getAllPlannedEvent() -> [PlannedEvent]{
-        
-        let fetchRequest: NSFetchRequest<PlannedEvent> = PlannedEvent.fetchRequest()
-        
-        do{
-            return try persistantContainer.viewContext.fetch(fetchRequest)
-        }catch{
-            return []
-        }
-    }
-
-    func savePlannedEvent(name:String, date: Date){
-        
-        let plannedEvent = PlannedEvent(context:persistantContainer.viewContext)
-        
-        plannedEvent.id = UUID()
-        plannedEvent.name = name
-        let timestamp = dateHelper.formatFromDateToTimestamp(date: date)
-        plannedEvent.timestamp = timestamp
-        
-        do{
-            try persistantContainer.viewContext.save()
-        }catch{
-            print("Failed to save \(error)")
         }
     }
     

@@ -9,28 +9,28 @@ import Foundation
 
 class PlannedEventViewModel: ObservableObject {
     
-    @Published var plannedMorningEvents: [PlannedEvent]
-    @Published var plannedMorningEventsDict: [TimeInterval: String]
+    @Published var plannedEvents: [PlannedEvent]
+    @Published var plannedEventsDict: [TimeInterval: String]
     
     let dateHelper = DateHelper()
-    let coreDM = CoreDataManager()
+    let plannedEventManager = PlannedEventManager()
     
     init(){
-        plannedMorningEvents = []
-        plannedMorningEventsDict = [:]
+        plannedEvents = []
+        plannedEventsDict = [:]
     }
     
     func updateAllPlannedEvent() {
-        plannedMorningEvents = coreDM.getAllPlannedEvent()
+        plannedEvents = plannedEventManager.getAllPlannedEvent()
     }
-        
-    func updatePlannedMorningEventsDict() {
+    
+    func updatePlannedEventsDict() {
         updateAllPlannedEvent()
         var dict: [TimeInterval: String]   = [:]
-        for event in plannedMorningEvents{
+        for event in plannedEvents{
             dict[event.timestamp] = event.name
         }
-        plannedMorningEventsDict = dict
+        plannedEventsDict = dict
     }
     
 }

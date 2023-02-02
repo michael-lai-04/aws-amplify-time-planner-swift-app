@@ -1,5 +1,5 @@
 //
-//  PlannedEvent+CoreDataProperties.swift
+//  ActualEvent+CoreDataProperties.swift
 //  aws-amplify-time-planner-swift-app
 //
 //  Created by Michael  Lai on 2/2/2023.
@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension PlannedEvent {
+extension ActualEvent {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<PlannedEvent> {
-        return NSFetchRequest<PlannedEvent>(entityName: "PlannedEvent")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<ActualEvent> {
+        return NSFetchRequest<ActualEvent>(entityName: "ActualEvent")
     }
 
     @NSManaged public var id: UUID?
@@ -22,6 +22,6 @@ extension PlannedEvent {
 
 }
 
-extension PlannedEvent : Identifiable {
+extension ActualEvent : Identifiable {
 
 }

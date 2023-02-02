@@ -1,5 +1,5 @@
 //
-//  PlannedEvent+CoreDataClass.swift
+//  ActualEvent+CoreDataClass.swift
 //  aws-amplify-time-planner-swift-app
 //
 //  Created by Michael  Lai on 2/2/2023.
@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 
-public class PlannedEvent: NSManagedObject {
+public class ActualEvent: NSManagedObject {
 
 }
