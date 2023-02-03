@@ -49,11 +49,14 @@ struct HomeScheduleView: View {
                 Color("#F8F5ED")
                 
                 VStack{
-                    HStack{
+                    HStack(alignment:.center){
                         ForEach(sectionTitles.indices, id: \.self){
                             i in
                             Text(sectionTitles[i].name)
                                 .padding()
+                                .frame(
+                                    maxWidth: .infinity
+                                )
                                 .overlay(
                                     Rectangle()
                                         .frame(height: i == selection ? 4 :0)
@@ -62,6 +65,7 @@ struct HomeScheduleView: View {
                                 )
                         }
                     }
+               
                     TabView(selection: $selection){
                         PlannedEventSectionView()
                             .tag(0)

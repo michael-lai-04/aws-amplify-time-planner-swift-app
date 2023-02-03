@@ -10,7 +10,13 @@ import SwiftUI
 struct SettingView: View {
     var body: some View {
         List{
-            Text("Theme")
+    
+            Button{
+                print("pressed")
+            }label: {
+                Text("Theme")
+            }
+            
         }
     }
 }
