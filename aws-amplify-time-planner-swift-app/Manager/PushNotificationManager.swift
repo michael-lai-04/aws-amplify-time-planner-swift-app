@@ -23,6 +23,21 @@ class NotificationManager {
         }
     }
     
+    func checkAuthorization() -> String {
+        var status = ""
+        UNUserNotificationCenter.current().getNotificationSettings(completionHandler: {
+            (settings) in
+            if settings.authorizationStatus == .authorized{
+                status = "permitted"
+            }
+            if settings.authorizationStatus != .authorized {
+                status = "not permitted"
+            }
+        }
+        )
+        return status
+    }
+    
     func scheduleNotification(){
         
         let content = UNMutableNotificationContent()
