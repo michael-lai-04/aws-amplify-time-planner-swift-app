@@ -197,26 +197,58 @@ struct EditPlannedEventSheet: View{
     @Binding var scheduleDate: Date
     
     let dateHelper = DateHelper()
+    let notificationManager = NotificationManager()
     let plannedEventManager = PlannedEventManager()
     
-    @State var eventName: String = ""
+    @State private var eventName: String = ""
     
+    @State private var  isNotificationSet: Bool = false
+        
     @EnvironmentObject var plannedEventViewModel: PlannedEventViewModel
     
     @Environment(\.presentationMode) var presentationMode
     
+    let notificationMinutes = [1, 5, 10 , 15, 30]
+    
+    @State private var selectedNotificationMinuteindex = 0
+
     var body: some View{
         VStack{
             Text("Planned Event")
 
             Text("\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")
+            
+            Toggle("Notification", isOn: $isNotificationSet)
+            
+            if isNotificationSet{
+                Picker(selection: $selectedNotificationMinuteindex){
+                    ForEach(notificationMinutes.indices, id: \.self) {
+                        indice in
+                        Text("\(notificationMinutes[indice]) minute")
+                    }
+                }label: {
+                    Text("Please choose :")
+                }
+            }
+            
             TextField("Event Name", text: $eventName)
                 .padding()
             Button {
-                
-                plannedEventManager.savePlannedEvent(name: eventName, date: dateHelper.formateFromDateWithHourStringToDate(dateString: "\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")!
+                let scheduleDateString = dateHelper.formatFromDateToDateString(date: scheduleDate)
+                let eventDateString = "\(scheduleDateString) \(hour.value)"
+                let eventDate =           dateHelper.formateFromDateWithHourStringToDate(dateString: eventDateString)
+                plannedEventManager.savePlannedEvent(name: eventName, date: eventDate!
                 )
+                
                 plannedEventViewModel.updatePlannedEventsDict()
+                
+                if(isNotificationSet){
+                    var dateComponents = Calendar.current.dateComponents([.hour, .minute], from: scheduleDate)
+                    dateComponents.hour = Int(hour.value)! - 1
+                    dateComponents.minute = 60 - Int(notificationMinutes[selectedNotificationMinuteindex])
+                    NotificationManager.instance.scheduleNotification(notificationContent: NotificationContent(title: eventName, subtitle: "", dateComponents: dateComponents))
+                }
+
                 presentationMode.wrappedValue.dismiss()
                 
             } label: {

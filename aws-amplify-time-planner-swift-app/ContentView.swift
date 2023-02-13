@@ -23,6 +23,10 @@ struct ContentView: View {
                     Text("Setting")
                 }
         }
+        .onAppear{
+            NotificationManager.instance.requestAuthorization()
+            UIApplication.shared.applicationIconBadgeNumber = 0
+        }
     }
 }
 

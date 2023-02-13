@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1507267A298D32C300AF0679 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15072679298D32C300AF0679 /* PushNotificationManager.swift */; };
+		1507267E2993FF0400AF0679 /* NotificationSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1507267D2993FF0400AF0679 /* NotificationSettingView.swift */; };
+		150726802993FF6700AF0679 /* ThemeSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1507267F2993FF6700AF0679 /* ThemeSettingView.swift */; };
 		1531D2C8298B4F2400157780 /* PlannedEventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1531D2C7298B4F2400157780 /* PlannedEventManager.swift */; };
 		1531D2CA298B546000157780 /* ActualEventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1531D2C9298B546000157780 /* ActualEventManager.swift */; };
 		1531D2D0298B55B800157780 /* ActualEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1531D2CF298B55B800157780 /* ActualEventViewModel.swift */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		0251B55F8FC1BE4D6C3A726F /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		15072679298D32C300AF0679 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		1507267D2993FF0400AF0679 /* NotificationSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingView.swift; sourceTree = "<group>"; };
+		1507267F2993FF6700AF0679 /* ThemeSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingView.swift; sourceTree = "<group>"; };
 		1531D2C7298B4F2400157780 /* PlannedEventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedEventManager.swift; sourceTree = "<group>"; };
 		1531D2C9298B546000157780 /* ActualEventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualEventManager.swift; sourceTree = "<group>"; };
 		1531D2CF298B55B800157780 /* ActualEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualEventViewModel.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				15E8A47E2989236D00BFAC1B /* SettingView.swift */,
+				1507267F2993FF6700AF0679 /* ThemeSettingView.swift */,
+				1507267D2993FF0400AF0679 /* NotificationSettingView.swift */,
 			);
 			path = SettingView;
 			sourceTree = "<group>";
@@ -315,7 +321,9 @@
 				156359842976465700FE8063 /* aws-amplify-time-planner-swift-app-model.xcdatamodeld in Sources */,
 				1531D2D0298B55B800157780 /* ActualEventViewModel.swift in Sources */,
 				15E4065B298B609500705D80 /* PlannedEvent+CoreDataClass.swift in Sources */,
+				150726802993FF6700AF0679 /* ThemeSettingView.swift in Sources */,
 				15CFEBC3297A3D9F00FD9565 /* DateHelper.swift in Sources */,
+				1507267E2993FF0400AF0679 /* NotificationSettingView.swift in Sources */,
 				154BCF062978D106002635AA /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

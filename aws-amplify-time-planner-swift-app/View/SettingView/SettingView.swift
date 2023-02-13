@@ -9,14 +9,20 @@ import SwiftUI
 
 struct SettingView: View {
     var body: some View {
-        List{
-    
-            Button{
-                print("pressed")
-            }label: {
-                Text("Theme")
+        NavigationView{
+            List{
+                NavigationLink{
+                    ThemeSettingView()
+                }label: {
+                    Text("Theme")
+                }
+                NavigationLink{
+                    NotificationSettingView()
+                }label: {
+                    Text("Notifiaction")
+                }
             }
-            
+            .navigationTitle("Settings")
         }
     }
 }

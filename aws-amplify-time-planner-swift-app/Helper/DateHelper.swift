@@ -11,7 +11,7 @@ class DateHelper {
     
      func formatFromDateStringToTimestamp (date: String) -> TimeInterval {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd hh"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH"
         let date = dateFormatter.date(from: date)
          let timestamp = date?.timeIntervalSince1970
         return timestamp ?? 0
@@ -33,14 +33,14 @@ class DateHelper {
     
     func formateFromDateWithHourStringToDate (dateString: String) -> Date?{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd hh"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH"
         let date = dateFormatter.date(from: dateString)
         return date
     }
     
     func formatFromDateToTimestamp (date:Date) -> TimeInterval{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd hh"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH"
         let dateString = dateFormatter.string(from: date)
         let formattedDate = dateFormatter.date(from: dateString)
         let timestamp = formattedDate!.timeIntervalSince1970

@@ -38,11 +38,11 @@ class NotificationManager {
         return status
     }
     
-    func scheduleNotification(){
+    func scheduleNotification(notificationContent: NotificationContent){
         
         let content = UNMutableNotificationContent()
-        content.title = "This is my first notification"
-        content.subtitle = "This was so easy!"
+        content.title = notificationContent.title
+        content.subtitle = notificationContent.subtitle
         content.sound = .default
         content.badge = 1
         
@@ -50,12 +50,12 @@ class NotificationManager {
 //        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
 //
         //calender
-        var dateComponent = DateComponents()
-        dateComponent.hour = 21
-        dateComponent.minute = 05
+//        var dateComponent = DateComponents()
+//        dateComponent.hour = 21
+//        dateComponent.minute = 05
 
 
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: notificationContent.dateComponents, repeats: false)
             
 
         let request = UNNotificationRequest(identifier: UUID().uuidString
@@ -71,4 +71,10 @@ class NotificationManager {
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
     }
     
+}
+
+struct NotificationContent {
+    let title: String
+    let subtitle: String
+    let dateComponents: DateComponents
 }
