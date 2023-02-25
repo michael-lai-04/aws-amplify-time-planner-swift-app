@@ -201,38 +201,68 @@ struct EditPlannedEventSheet: View{
     let plannedEventManager = PlannedEventManager()
     
     @State private var eventName: String = ""
-    
     @State private var  isNotificationSet: Bool = false
-        
+    @State private var isReahedFinishTimeReminderSet: Bool = false
+    @State private var beforeStartTimeReminderSelection = 0
+    
     @EnvironmentObject var plannedEventViewModel: PlannedEventViewModel
     
     @Environment(\.presentationMode) var presentationMode
     
-    let notificationMinutes = [1, 5, 10 , 15, 30]
-    
-    @State private var selectedNotificationMinuteindex = 0
-
+    let notificationMinutes = [0, 5, 10 , 15, 30]
+        
     var body: some View{
-        VStack{
-            Text("Planned Event")
-
-            Text("\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value)")
-            
-            Toggle("Notification", isOn: $isNotificationSet)
-            
-            if isNotificationSet{
-                Picker(selection: $selectedNotificationMinuteindex){
-                    ForEach(notificationMinutes.indices, id: \.self) {
-                        indice in
-                        Text("\(notificationMinutes[indice]) minute")
+        ZStack(alignment: .topLeading) {
+                Color("#F6F3F3")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            VStack{
+                Text("\(dateHelper.formatFromDateToDateString(date: scheduleDate)) \(hour.value):00")
+                    .padding(5)
+                    .background(Color("#e3d8b8"))
+                    .cornerRadius(10)
+                
+                Text("Planned Event")
+                    .frame(
+                        maxWidth:.infinity,
+                        alignment: .leading
+                    )
+                
+                TextField("Event Name", text: $eventName)
+                    .padding(.horizontal)
+                
+                Toggle("Reminder When Finish Time Reached", isOn: $isReahedFinishTimeReminderSet)
+                
+                HStack{
+                    Text("Reminder Before Start Time")
+                    Spacer()
+                    Menu{
+                        Picker(selection: $beforeStartTimeReminderSelection){
+                            ForEach(notificationMinutes.indices, id: \.self){
+                                i in
+                                Text(notificationMinutes[i] > 0 ?
+                                     String(notificationMinutes[i]) :
+                                        "not selected"
+                                )
+                                .padding()
+                                //                            .overlay(
+                                //                                Rectangle()
+                                //                                    .frame(height:3)
+                                //                                    .foregroundColor(Color("black")),
+                                //                                alignment: .bottom
+                                //                            )
+                            }
+                        }label: {
+                        }
+                    }label: {
+                        Text(notificationMinutes[beforeStartTimeReminderSelection] > 0 ?
+                             String(notificationMinutes[beforeStartTimeReminderSelection]) :
+                                "not selected"
+                        )
+                        .foregroundColor(.black)
+                        .padding()
                     }
-                }label: {
-                    Text("Please choose :")
                 }
-            }
-            
-            TextField("Event Name", text: $eventName)
-                .padding()
+                
             Button {
                 let scheduleDateString = dateHelper.formatFromDateToDateString(date: scheduleDate)
                 let eventDateString = "\(scheduleDateString) \(hour.value)"
@@ -242,10 +272,10 @@ struct EditPlannedEventSheet: View{
                 
                 plannedEventViewModel.updatePlannedEventsDict()
                 
-                if(isNotificationSet){
+                if(beforeStartTimeReminderSelection > 0){
                     var dateComponents = Calendar.current.dateComponents([.hour, .minute], from: scheduleDate)
                     dateComponents.hour = Int(hour.value)! - 1
-                    dateComponents.minute = 60 - Int(notificationMinutes[selectedNotificationMinuteindex])
+                    dateComponents.minute = 60 - Int(notificationMinutes[beforeStartTimeReminderSelection])
                     NotificationManager.instance.scheduleNotification(notificationContent: NotificationContent(title: eventName, subtitle: "", dateComponents: dateComponents))
                 }
 
@@ -255,6 +285,8 @@ struct EditPlannedEventSheet: View{
                 Text("Submit")
                     .padding()
             }
+            }
+            .padding()
         }
     }
 }
