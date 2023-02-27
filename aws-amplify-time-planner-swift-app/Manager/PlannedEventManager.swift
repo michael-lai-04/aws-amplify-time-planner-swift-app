@@ -10,7 +10,6 @@ import CoreData
 
 class PlannedEventManager {
     
-    let coreDataManager = CoreDataManager()
     let dateHelper = DateHelper()
 
     func getAllPlannedEvent() -> [PlannedEvent]{
@@ -18,7 +17,7 @@ class PlannedEventManager {
         let fetchRequest: NSFetchRequest<PlannedEvent> = PlannedEvent.fetchRequest()
         
         do{
-            return try coreDataManager.persistantContainer.viewContext.fetch(fetchRequest)
+            return try CoreDataManager.intance.persistantContainer.viewContext.fetch(fetchRequest)
         }catch{
             return []
         }
@@ -26,7 +25,7 @@ class PlannedEventManager {
 
     func savePlannedEvent(name:String, date: Date){
         
-        let plannedEvent = PlannedEvent(context:coreDataManager.persistantContainer.viewContext)
+        let plannedEvent = PlannedEvent(context:CoreDataManager.intance.persistantContainer.viewContext)
         
         plannedEvent.id = UUID()
         plannedEvent.name = name
@@ -34,7 +33,7 @@ class PlannedEventManager {
         plannedEvent.timestamp = timestamp
         
         do{
-            try coreDataManager.persistantContainer.viewContext.save()
+            try CoreDataManager.intance.persistantContainer.viewContext.save()
         }catch{
             print("Failed to save \(error)")
         }

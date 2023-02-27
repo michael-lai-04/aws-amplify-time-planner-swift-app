@@ -33,4 +33,9 @@ class PlannedEventViewModel: ObservableObject {
         plannedEventsDict = dict
     }
     
+    func getPlannedEventBy (timestamp: TimeInterval) -> String {
+        guard let getEventResult = plannedEventsDict[timestamp] else {return ""}
+        return getEventResult
+    }
+    
 }

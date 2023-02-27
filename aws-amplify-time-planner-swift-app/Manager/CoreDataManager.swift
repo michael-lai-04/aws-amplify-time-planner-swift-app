@@ -12,6 +12,8 @@ class CoreDataManager {
     let persistantContainer: NSPersistentContainer
     let modelName = "aws-amplify-time-planner-swift-app-model"
     
+    static let intance = CoreDataManager()
+    
     init(){
         persistantContainer = NSPersistentContainer(name: modelName)
         persistantContainer.loadPersistentStores { (description, error) in

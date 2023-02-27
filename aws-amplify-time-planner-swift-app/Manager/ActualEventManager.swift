@@ -9,7 +9,6 @@ import Foundation
 import CoreData
 
 class ActualEventManager {
-    let coreDataManager = CoreDataManager()
     let dateHelper = DateHelper()
     
     func getAllActualEvent() -> [ActualEvent]{
@@ -17,14 +16,14 @@ class ActualEventManager {
         let fetchRequest: NSFetchRequest<ActualEvent> = ActualEvent.fetchRequest()
         
         do{
-            return try coreDataManager.persistantContainer.viewContext.fetch(fetchRequest)
+            return try CoreDataManager.intance.persistantContainer.viewContext.fetch(fetchRequest)
         }catch{
             return []
         }
     }
     
     func saveActualEvent(name:String, date: Date){
-        let actualEvent = ActualEvent(context: coreDataManager.persistantContainer.viewContext)
+        let actualEvent = ActualEvent(context: CoreDataManager.intance.persistantContainer.viewContext)
         
         actualEvent.id = UUID()
         actualEvent.name = name
@@ -33,7 +32,7 @@ class ActualEventManager {
         actualEvent.timestamp = timestamp
         
         do{
-            try coreDataManager.persistantContainer.viewContext.save()
+            try CoreDataManager.intance.persistantContainer.viewContext.save()
         }catch{
             print("Failed to save \(error)")
         }
